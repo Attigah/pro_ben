@@ -5,7 +5,13 @@ import SearchIcon from './search.svg'
 //http://www.omdbapi.com/?i=tt3896198&apikey=2e5d46cf
 const API_URL = 'http://www.omdbapi.com?apikey=2e5d46cf';
 
-
+const movie1 = {
+        "Title": "Spiderman",
+        "Year": "1990",
+        "imdbID": "tt0100669",
+        "Type": "movie",
+        "Poster": "N/A"
+}
 //API SETTINGS.abk
 const App = () => {
  
@@ -22,23 +28,35 @@ const App = () => {
 
      return (
        <div className="app">
-        <h1>MovieLand
+        <h1>MovieLand</h1>
             <div className="search">
                 <input
-                placeholder="Search for moives"
+                placeholder="Search for movies"
                 value="Superman"
                 onChange={() => {}}
                 />
                 <img
-                src={searchIcon}
+                src={SearchIcon}
                 alt="search"
                 onClick={() => {}}
                 />
-
             </div>
-        </h1>
+            <div className="container">
+                <div className="movie">
+                    <p>{movie1.Year}</p>
+                </div>   
+                <div>
+                    <img src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https://via.placeholder.com/400'} alt={movie1.Title}/>
+                </div>
 
-       </div>>
+                <div>
+                    <span>{movie1.Type}</span>
+                    <h3>{movie1.Title}</h3>
+                </div>
+            </div>
+        </div>
+
+          
     );
 }
 
